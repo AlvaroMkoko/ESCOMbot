@@ -3,6 +3,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { Send, User, Bot, Loader2 } from 'lucide-react';
 import { Message, MessageRole } from '../types/chat';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
 
 export default function ChatInterface() {
     const [messages, setMessages] = useState<Message[]>([
@@ -102,7 +105,12 @@ export default function ChatInterface() {
                                         : 'bg-gray-100 text-gray-800 rounded-tl-none'
                                     }`}
                             >
-                                <div className="whitespace-pre-wrap">{msg.content}</div>
+                                <ReactMarkdown
+                                    remarkPlugins={[remarkGfm]}
+                                    className="prose prose-sm prose-gray max-w-none"
+                                >
+                                    {msg.content}
+                                </ReactMarkdown>
                             </div>
                             <span className="text-[10px] text-gray-400 mt-1 px-1">
                                 {new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
