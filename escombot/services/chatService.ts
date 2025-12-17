@@ -48,17 +48,17 @@ export class ChatService {
 
             if (!response.ok) {
                 const errorData = await response.json();
-                throw new Error(`API Error: ${response.status} - ${errorData.error?.message || "Unknown error"}`);
+                throw new Error(`API Error: ${response.status} - ${errorData.error?.message || "Error desconocido"}`);
             }
 
             const data = await response.json();
-            const message = data.choices[0]?.message?.content || "No response received from API";
+            const message = data.choices[0]?.message?.content || "No puedo responder a eso por el momento";
 
             return {
                 message: message,
             };
         } catch (error) {
-            console.error("Error connecting to API:", error);
+            console.error("Error de conección:", error);
             return {
                 message: `Error al procesar tu mensaje: ${error instanceof Error ? error.message : "Error desconocido"}`,
             };
