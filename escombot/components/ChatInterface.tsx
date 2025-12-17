@@ -76,9 +76,9 @@ export default function ChatInterface() {
     };
 
     return (
-        <div className="flex flex-col h-[calc(100vh-80px)] max-w-4xl mx-auto bg-gray-50 md:rounded-2xl md:shadow-xl md:my-4 md:h-[800px] overflow-hidden border border-gray-100">
+        <div className="flex flex-col h-[500px] sm:h-full w-full max-w-4xl mx-auto bg-gray-50 sm:rounded-xl md:rounded-2xl sm:shadow-md md:shadow-xl overflow-hidden border border-gray-100">
             {/* Messages Area */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-white">
+            <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-4 bg-white">
                 {messages.map((msg) => (
                     <div
                         key={msg.id}
@@ -124,7 +124,7 @@ export default function ChatInterface() {
             </div>
 
             {/* Input Area */}
-            <div className="p-4 bg-white border-t border-gray-100">
+            <div className="p-3 sm:p-4 bg-white border-t border-gray-100">
                 <form onSubmit={handleSubmit} className="flex gap-2">
                     <input
                         type="text"
