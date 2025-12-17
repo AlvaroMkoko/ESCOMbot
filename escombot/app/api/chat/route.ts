@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { chatService } from '@/services/chatService';
+import { ChatService } from '@/services/chatService';
 
 export async function POST(request: Request) {
     try {
@@ -13,6 +13,7 @@ export async function POST(request: Request) {
             );
         }
 
+        const chatService = ChatService.getInstance();
         const response = await chatService.processMessage(message);
 
         return NextResponse.json(response);
