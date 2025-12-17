@@ -88,7 +88,7 @@ export default function ChatInterface() {
                         className={`flex items-start gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''
                             }`}
                     >
-                        <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${msg.role === 'user' ? 'bg-blue-600' : 'bg-gray-200'
+                        <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${msg.role === 'user' ? 'bg-[#0b6696]' : 'bg-gray-200'
                             }`}>
                             {msg.role === 'user' ? (
                                 <User className="w-5 h-5 text-white" />
@@ -101,7 +101,7 @@ export default function ChatInterface() {
                             }`}>
                             <div
                                 className={`px-4 py-2.5 rounded-2xl text-sm leading-relaxed shadow-sm ${msg.role === 'user'
-                                        ? 'bg-blue-600 text-white rounded-tr-none'
+                                        ? 'bg-[#0b6696] text-white rounded-tr-none'
                                         : 'bg-gray-100 text-gray-800 rounded-tl-none'
                                     }`}
                             >
@@ -110,7 +110,7 @@ export default function ChatInterface() {
                                     className="prose prose-sm prose-gray max-w-none"
                                     components={{
                                         a: ({ node, ...props }) => (
-                                            <a {...props} className={`${msg.role === 'user' ? 'text-blue-200 hover:text-white' : 'text-blue-600 hover:text-blue-800'} underline`} />
+                                            <a {...props} className={`${msg.role === 'user' ? 'text-[#0b6696] hover:text-white' : 'text-[#0b6696] hover:text-[#0b6696]'} underline`} />
                                         )
                                     }}
                                 >
