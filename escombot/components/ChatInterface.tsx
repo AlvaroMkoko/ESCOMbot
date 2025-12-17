@@ -108,6 +108,11 @@ export default function ChatInterface() {
                                 <ReactMarkdown
                                     remarkPlugins={[remarkGfm]}
                                     className="prose prose-sm prose-gray max-w-none"
+                                    components={{
+                                        a: ({ node, ...props }) => (
+                                            <a {...props} className={`${msg.role === 'user' ? 'text-blue-200 hover:text-white' : 'text-blue-600 hover:text-blue-800'} underline`} />
+                                        )
+                                    }}
                                 >
                                     {msg.content}
                                 </ReactMarkdown>
