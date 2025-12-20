@@ -79,7 +79,7 @@ export default function ChatInterface() {
     };
 
     return (
-        <div className="flex flex-col h-[500px] sm:h-full w-full max-w-4xl mx-auto bg-gray-50 sm:rounded-xl md:rounded-2xl sm:shadow-md md:shadow-xl overflow-hidden border border-gray-100">
+        <div className=" lex flex-col h-[500px] sm:h-full w-full max-w-4xl mx-auto bg-gray-50 sm:rounded-xl md:rounded-2xl sm:shadow-md md:shadow-xl overflow-hidden border border-gray-100">
             {/* Messages Area */}
             <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-4 bg-white">
                 {messages.map((msg) => (
