@@ -79,15 +79,14 @@ export default function ChatInterface() {
     };
 
     return (
-        <div className=" lex flex-col h-[500px] sm:h-full w-full max-w-4xl mx-auto bg-gray-50 sm:rounded-xl md:rounded-2xl sm:shadow-md md:shadow-xl overflow-hidden border border-gray-100">
+        <div className="flex flex-col h-[500px] sm:h-full w-full max-w-4xl mx-auto bg-gray-50 sm:rounded-xl md:rounded-2xl sm:shadow-md md:shadow-xl overflow-hidden border border-gray-100">
             {/* Messages Area */}
             <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-4 bg-white">
                 {messages.map((msg) => (
                     <div
                         key={msg.id}
                         className={`flex items-start gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''
-                            }`}
-                    >
+                            }`}>
                         <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${msg.role === 'user' ? 'bg-[#0b6696]' : 'bg-gray-200'
                             }`}>
                             {msg.role === 'user' ? (
