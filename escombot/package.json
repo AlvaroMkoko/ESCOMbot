@@ -6,12 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prisma:generate": "npx prisma@5.8.0 generate",
+    "prisma:migrate": "npx prisma@5.8.0 migrate dev",
+    "prisma:studio": "npx prisma@5.8.0 studio",
+    "setup-db": "npm run prisma:generate && npm run prisma:migrate -- --name init && npm run db:seed",
+    "db:seed": "node scripts/seed.js"
   },
   "dependencies": {
+    "@prisma/client": "5.8.0",
+    "bcryptjs": "^2.4.3",
     "clsx": "^2.1.1",
     "lucide-react": "^0.561.0",
     "next": "16.0.10",
+    "pg": "^8.16.3",
     "react": "19.2.1",
     "react-dom": "19.2.1",
     "react-markdown": "^9.1.0",
@@ -21,6 +29,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@tailwindcss/typography": "^0.5.19",
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
