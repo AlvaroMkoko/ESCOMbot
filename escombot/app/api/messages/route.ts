@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
 
     // Respuesta del LLM
     const chatService = getChatService();
-    const llmResponse = await chatService.processMessage(message);
+    const llmResponse = await chatService.processMessageWithContext(chatId, message);
 
     // Guardar respuesta del bot
     const botMessage = await prisma.message.create({
